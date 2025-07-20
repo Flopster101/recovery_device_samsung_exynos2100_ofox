@@ -6,10 +6,7 @@
 #
 
 # Define hardware platform
-PRODUCT_PLATFORM := exynos2100
-
-# # Inherit some common TWRP stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
+PRODUCT_PLATFORM := universal2100_r
 
 # The below variables will be generated automatically
 #
@@ -21,7 +18,7 @@ CUSTOM_VENDOR := $(lastword $(subst /, ,$(firstword $(subst _, ,$(firstword $(MA
 
 # Inherit from common AOSP config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/$(CUSTOM_VENDOR)/config/common.mk)
@@ -41,3 +38,6 @@ DEVICE_PATH := device/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)/device.mk)
+
+# # Inherit some common TWRP stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)

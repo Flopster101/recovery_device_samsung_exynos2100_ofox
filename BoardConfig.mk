@@ -1,18 +1,10 @@
 #
-# Copyright (C) 2020 The Android Open Source Project
+# Copyright (C) 2024 The Android Open Source Project
+# Copyright (C) 2024 The TWRP Open Source Project
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# SPDX-License-Identifier: Apache-2.0
 #
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
@@ -63,11 +55,15 @@ BOARD_MKBOOTIMG_ARGS := \
     --header_version 2
 
 BOARD_ROOT_EXTRA_FOLDERS := \
+    carrier \
     data_mirror \
     efs \
+    keydata \
+    keyrefuge \
     omr \
     optics \
-    prism
+    prism \
+    spu
 
 # SELinux
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
@@ -99,10 +95,6 @@ BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 11425284096
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system odm product vendor
 
-BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_GROUP_BASIC_PARTITION_LIST))
-$(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := f2fs))
-$(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
-
 # Encryption
 BOARD_USES_METADATA_PARTITION := true
 PLATFORM_VERSION := 99.87.36
@@ -111,22 +103,13 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
-# Use mke2fs to create ext4 images
-TARGET_USES_MKE2FS := true
-
-# Workaround for error copying vendor files to recovery ramdisk
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_COPY_OUT_VENDOR := vendor
-
-# PRODUCT_COPY_FILES directives.
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-
-AB_OTA_UPDATER := false
-
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 RECOVERY_SDCARD_ON_DATA := true
+
+# Use mke2fs to create ext4 images
+TARGET_USES_MKE2FS := true
 
 # TWRP specific build flags
 TW_DEVICE_VERSION := Chiclet_v1
@@ -135,8 +118,6 @@ TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 561
 TW_DEFAULT_BRIGHTNESS := 255
 TW_FRAMERATE := 120
-TW_Y_OFFSET := 100
-TW_H_OFFSET := -100
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
@@ -153,11 +134,3 @@ TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_LPTOOLS := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
-RECOVERY_SDCARD_ON_DATA := true
-TW_USE_NEW_MINADBD := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_USE_TOOLBOX := true
-TARGET_USES_MKE2FS := true
-TW_NO_LEGACY_PROPS := true
-TW_NO_BIND_SYSTEM := true
-TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
