@@ -33,7 +33,7 @@ s2mps24-regulator.ko
 phy-exynos-usbdrd-super.ko
 sec_debug_mode.ko
 fingerprint.ko
-ssg-iosched.ko
+ssg.ko
 blk-sec-stats.ko
 phy-exynos-mipi-dsim.ko
 phy-exynos-mipi.ko

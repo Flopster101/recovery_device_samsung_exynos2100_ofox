@@ -1,5 +1,5 @@
 # Aliases extracted from modules themselves.
-alias ssg ssg_iosched
+alias ssg ssg
 alias of:N*T*Csamsung,mipi-phy-m4m4-top phy_exynos_mipi_dsim
 alias of:N*T*Csamsung,mipi-phy-m4m4-topC* phy_exynos_mipi_dsim
 alias of:N*T*Csamsung,mipi-phy-m4m4-mod phy_exynos_mipi_dsim
@@ -149,9 +149,9 @@ alias of:N*T*Csamsung,exynos-perfC* xperf
 alias platform:exynos-sci exynos_sci
 alias platform:exynos-sci_dbg exynos_sci
 alias platform:exynos-bcm_dbg exynos_bcm_dbg
-alias platform:exynos-dm exynos_dm
 alias of:N*T*Csamsung,exynos-dvfs-manager exynos_dm
 alias of:N*T*Csamsung,exynos-dvfs-managerC* exynos_dm
+alias platform:exynos-dm exynos_dm
 alias of:N*T*Csamsung,exynos-mcinfo exynos_mcinfo
 alias of:N*T*Csamsung,exynos-mcinfoC* exynos_mcinfo
 alias of:N*T*Csamsung,exynos-msn exynos_msn
@@ -172,9 +172,9 @@ alias platform:s2mps23-regulator s2mps23_regulator
 alias platform:s2mps24-regulator s2mps24_regulator
 alias platform:s2mpb02-regulator s2mpb02_regulator
 alias platform:exynos-uart exynos_tty
-alias platform:exynos-uart exynos_tty
 alias of:N*T*Csamsung,exynos-uart exynos_tty
 alias of:N*T*Csamsung,exynos-uartC* exynos_tty
+alias platform:exynos-uart exynos_tty
 alias of:N*T*Carm,mali mali_kbase
 alias of:N*T*Carm,maliC* mali_kbase
 alias of:N*T*Carm,malit6xx mali_kbase
@@ -185,9 +185,9 @@ alias of:N*T*Carm,mali-bifrost mali_kbase
 alias of:N*T*Carm,mali-bifrostC* mali_kbase
 alias i2c:s2mps23 s2mps23_mfd
 alias i2c:s2mps24 s2mps24_mfd
-alias i2c:s2mpb02 s2mpb02_mfd
 alias of:N*T*Cs2mpb02,s2mpb02mfd s2mpb02_mfd
 alias of:N*T*Cs2mpb02,s2mpb02mfdC* s2mpb02_mfd
+alias i2c:s2mpb02 s2mpb02_mfd
 alias of:N*T*Csamsung,exynos-ufs ufs_exynos_core
 alias of:N*T*Csamsung,exynos-ufsC* ufs_exynos_core
 alias spi:spidev spidev
@@ -260,7 +260,6 @@ alias usb:v1546p1010d*dc*dsc*dp*ic02isc0Dip00in* cdc_ncm
 alias usb:v*p*d*dc*dsc*dp*ic02isc0Dip00in* cdc_ncm
 alias pci:v*d*sv*sd*bc0Csc03i30* xhci_pci
 alias platform:xhci-hcd xhci_plat_hcd
-alias acpi*:PNP0D10:* xhci_plat_hcd
 alias of:N*T*Cgeneric-xhci xhci_plat_hcd
 alias of:N*T*Cgeneric-xhciC* xhci_plat_hcd
 alias of:N*T*Cxhci-platform xhci_plat_hcd
@@ -285,6 +284,7 @@ alias of:N*T*Crenesas,rcar-gen2-xhci xhci_plat_hcd
 alias of:N*T*Crenesas,rcar-gen2-xhciC* xhci_plat_hcd
 alias of:N*T*Crenesas,rcar-gen3-xhci xhci_plat_hcd
 alias of:N*T*Crenesas,rcar-gen3-xhciC* xhci_plat_hcd
+alias acpi*:PNP0D10:* xhci_plat_hcd
 alias usbfunc:dm usb_f_dm
 alias usbfunc:dm1 usb_f_dm1
 alias usbfunc:mtp usb_f_mtp_samsung
@@ -312,7 +312,6 @@ alias of:N*T*Callwinner,sun50i-h6-dwc3 dwc3_of_simple
 alias of:N*T*Callwinner,sun50i-h6-dwc3C* dwc3_of_simple
 alias of:N*T*Chisilicon,hi3670-dwc3 dwc3_of_simple
 alias of:N*T*Chisilicon,hi3670-dwc3C* dwc3_of_simple
-alias acpi*:QCOM2430:* dwc3_qcom
 alias of:N*T*Cqcom,dwc3 dwc3_qcom
 alias of:N*T*Cqcom,dwc3C* dwc3_qcom
 alias of:N*T*Cqcom,msm8996-dwc3 dwc3_qcom
@@ -321,12 +320,14 @@ alias of:N*T*Cqcom,msm8998-dwc3 dwc3_qcom
 alias of:N*T*Cqcom,msm8998-dwc3C* dwc3_qcom
 alias of:N*T*Cqcom,sdm845-dwc3 dwc3_qcom
 alias of:N*T*Cqcom,sdm845-dwc3C* dwc3_qcom
+alias acpi*:QCOM2430:* dwc3_qcom
 alias char-major-166-* cdc_acm
 alias usb:v0424p274Ed*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v076Dp0006d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v17EFp7000d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v0870p0001d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v045Bp023Cd*dc*dsc*dp*ic*isc*ip*in* cdc_acm
+alias usb:v045Bp0247d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v045Bp0248d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v045Bp024Dd*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v0E8Dp0003d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
@@ -338,6 +339,7 @@ alias usb:v0ACEp1602d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v0ACEp1608d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v0ACEp1611d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v11CAp0201d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
+alias usb:v1901p0006d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v1965p0018d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v22B8p7000d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
 alias usb:v0803p3095d*dc*dsc*dp*ic*isc*ip*in* cdc_acm
@@ -1305,6 +1307,21 @@ alias usb:v1546p0502d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
 alias usb:v1546p0503d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
 alias usb:v0403p7150d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
 alias usb:v0403p7151d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
+alias usb:v1CD7p0217d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
+alias usb:v09FBp6022d*dc*dsc*dp*ic*isc*ip*in01* ftdi_sio
+alias usb:v09FBp6025d*dc*dsc*dp*ic*isc*ip*in02* ftdi_sio
+alias usb:v09FBp6026d*dc*dsc*dp*ic*isc*ip*in02* ftdi_sio
+alias usb:v09FBp6026d*dc*dsc*dp*ic*isc*ip*in03* ftdi_sio
+alias usb:v09FBp6029d*dc*dsc*dp*ic*isc*ip*in02* ftdi_sio
+alias usb:v09FBp602Ad*dc*dsc*dp*ic*isc*ip*in02* ftdi_sio
+alias usb:v09FBp602Ad*dc*dsc*dp*ic*isc*ip*in03* ftdi_sio
+alias usb:v09FBp602Cd*dc*dsc*dp*ic*isc*ip*in01* ftdi_sio
+alias usb:v09FBp602Dd*dc*dsc*dp*ic*isc*ip*in01* ftdi_sio
+alias usb:v09FBp602Dd*dc*dsc*dp*ic*isc*ip*in02* ftdi_sio
+alias usb:v09FBp602Ed*dc*dsc*dp*ic*isc*ip*in01* ftdi_sio
+alias usb:v09FBp602Ed*dc*dsc*dp*ic*isc*ip*in02* ftdi_sio
+alias usb:v09FBp602Ed*dc*dsc*dp*ic*isc*ip*in03* ftdi_sio
+alias usb:v0403pF458d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
 alias usb:v067Bp2303d*dc*dsc*dp*ic*isc*ip*in* pl2303
 alias usb:v067Bp04BBd*dc*dsc*dp*ic*isc*ip*in* pl2303
 alias usb:v067Bp1234d*dc*dsc*dp*ic*isc*ip*in* pl2303
@@ -1375,6 +1392,7 @@ alias usb:v0B63p653Ad*dc*dsc*dp*ic*isc*ip*in* pl2303
 alias usb:v0B8Cp2303d*dc*dsc*dp*ic*isc*ip*in* pl2303
 alias usb:v0CAAp3001d*dc*dsc*dp*ic*isc*ip*in* pl2303
 alias usb:v04B3p4016d*dc*dsc*dp*ic*isc*ip*in* pl2303
+alias usb:v345Fp3020d*dc*dsc*dp*ic*isc*ip*in* pl2303
 alias of:N*T*Csamsung,usb-notifier usb_notifier
 alias of:N*T*Csamsung,usb-notifierC* usb_notifier
 alias platform:s2mps23 Power key s2mps23_key
@@ -1514,9 +1532,9 @@ alias of:N*T*Cexynos,ion,cma_heap ion_exynos_mod
 alias of:N*T*Cexynos,ion,cma_heapC* ion_exynos_mod
 alias of:N*T*Cexynos,ion,carveout_heap ion_exynos_mod
 alias of:N*T*Cexynos,ion,carveout_heapC* ion_exynos_mod
-alias platform:exynos-devfreq exynos_devfreq
 alias of:N*T*Csamsung,exynos-devfreq exynos_devfreq
 alias of:N*T*Csamsung,exynos-devfreqC* exynos_devfreq
+alias platform:exynos-devfreq exynos_devfreq
 alias of:N*T*Cs2mps23-gpadc s2mps23_adc
 alias of:N*T*Cs2mps23-gpadcC* s2mps23_adc
 alias of:N*T*Csamsung,exynos-dsp dsp
@@ -1537,14 +1555,14 @@ alias of:N*T*Csamsung,sec_wakeup_cpu_allocatorC* sec_wakeup_cpu_allocator
 alias platform:sec-reboot sec_reboot
 alias of:N*T*Csamsung,sec_debug sec_debug
 alias of:N*T*Csamsung,sec_debugC* sec_debug
-alias i2c:pca9468-charger pca9468_charger
 alias of:N*T*Cnxp,pca9468 pca9468_charger
 alias of:N*T*Cnxp,pca9468C* pca9468_charger
+alias i2c:pca9468-charger pca9468_charger
 alias of:N*T*Chall_ic hall_ic
 alias of:N*T*Chall_icC* hall_ic
-alias i2c:max77705 mfd_max77705
 alias of:N*T*Cmaxim,max77705 mfd_max77705
 alias of:N*T*Cmaxim,max77705C* mfd_max77705
+alias i2c:max77705 mfd_max77705
 alias spi:ssp-spi broadcom_sensorhub
 alias of:N*T*Cssp,BCM4773 broadcom_sensorhub
 alias of:N*T*Cssp,BCM4773C* broadcom_sensorhub

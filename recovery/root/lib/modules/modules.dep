@@ -1,4 +1,4 @@
-/lib/modules/ssg-iosched.ko: /lib/modules/blk-sec-stats.ko
+/lib/modules/ssg.ko:
 /lib/modules/blk-sec-stats.ko:
 /lib/modules/phy-exynos-mipi-dsim.ko: /lib/modules/exynos-pmu-if.ko
 /lib/modules/phy-exynos-mipi.ko: /lib/modules/exynos-pmu-if.ko
