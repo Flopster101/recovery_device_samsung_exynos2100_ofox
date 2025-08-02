@@ -25,5 +25,6 @@ $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-l
 # Display
 TW_MAX_BRIGHTNESS := 561
 TW_DEFAULT_BRIGHTNESS := 255
+TW_USE_SAMSUNG_HAPTICS := true
 
 include $(DEVICE_PATH)/BoardConfig.mk
