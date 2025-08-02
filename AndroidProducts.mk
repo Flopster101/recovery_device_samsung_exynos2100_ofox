@@ -15,6 +15,13 @@
 #
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/twrp_o1s.mk
+	$(LOCAL_DIR)/twrp_o1s.mk \
+	$(LOCAL_DIR)/twrp_p3s.mk \
+	$(LOCAL_DIR)/twrp_r9s.mk \
+	$(LOCAL_DIR)/twrp_t2s.mk
 
-COMMON_LUNCH_CHOICES := twrp_o1s-eng
+COMMON_LUNCH_CHOICES := \
+	twrp_o1s-eng \
+	twrp_p3s-eng \
+	twrp_r9s-eng \
+	twrp_t2s-eng

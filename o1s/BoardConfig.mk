@@ -1,0 +1,29 @@
+#
+# Copyright (C) 2024 The Android Open Source Project
+# Copyright (C) 2024 The TWRP Open Source Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Partitions
+BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
+BOARD_DTBOIMG_PARTITION_SIZE := 8388608
+												 
+BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 67108864
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
+
+# Dynamic partitions
+BOARD_SUPER_PARTITION_SIZE := 11429478400
+BOARD_SUPER_PARTITION_GROUPS := group_basic
+BOARD_GROUP_BASIC_SIZE := 11425284096
+BOARD_GROUP_BASIC_PARTITION_LIST := system odm product vendor
+
+BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_GROUP_BASIC_PARTITION_LIST))
+$(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := f2fs))
+$(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
+
+# Display
+TW_MAX_BRIGHTNESS := 561
+TW_DEFAULT_BRIGHTNESS := 255
+
+include $(DEVICE_PATH)/BoardConfig.mk

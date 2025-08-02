@@ -14,10 +14,9 @@
 # limitations under the License.
 #
 
-ifneq ($(filter o1s, $(TARGET_DEVICE)),)
-
 LOCAL_PATH := $(call my-dir)
 
+ifneq ($(filter o1s p3s r9s t2s, $(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
-
+include $(CLEAR_VARS)
 endif
