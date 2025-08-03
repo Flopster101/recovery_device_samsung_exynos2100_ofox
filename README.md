@@ -1,40 +1,34 @@
 # TWRP Device Tree for Samsung Galaxy S21 Series
 
-The Galaxy S21 Series (codenamed _"r9s"_,_"o1s"_,_"t2s"_,_"p3s"_) is a family of flagship smartphones from Samsung.
-
-They were announced and released in January 2021.
-
-This device tree is compatible with all 3 devices: S21 5G, S21+ 5G, S21 Ultra 5G.
-
 ## Device specifications
 
-| Feature                      | Specification                                                                      |
-| ---------------------------: | :----------------------------------------------------------------------------------|
-| Chipset                      | Exynos 2100                                                                        |
-| CPU                          | Octa-core (1x2.91 GHz Cortex X1 & 3x2.81 GHz Cortex-A78 & 4x2.21 GHz Cortex-A55)  |
-| GPU                          | Mali-G78 MP14                                                                      |
-| Memory                       | 8GB/12GB/16GB RAM                                                                  |
-| Shipped OS                   | Android 11 (One UI 3.1)                                                            |
-| Storage                      | 128GB / 256GB / 512GB (UFS 3.1)                                                    |
+| Branding Name                             | Model Number          | Internal Codename         |
+| :---------------------------------------- | :-------------------- | :------------------------ |
+| Samsung Galaxy S21 FE 5G (INTL/Korean)    | SM-G990E              | r9s                       |
+| Samsung Galaxy S21 5G (INTL/Korean)       | SM-G991B / SM-G991N   | o1s / o1sks               |
+| Samsung Galaxy S21+ 5G (INTL/Korean)      | SM-G996B / SM-G996N   | t2s / t2sks               |
+| Samsung Galaxy S21 Ultra 5G (INTL/Korean) | SM-G998B / SM-G998N   | p3s / p3sks               |
 
 ## Kernel source 
 
 Available at [https://github.com/xfwdrev/android_kernel_samsung_ex2100/](https://github.com/xfwdrev/android_kernel_samsung_ex2100)
 
+- Note: The kernel has been compiled with the --recovery flag set to y.
+
 ## Bugs
 
-- /data decryption in OneUI (works on AOSP)
+- /data decryption
 
 ## How to build
 
-This device tree was tested and is fully compatible with [minimal-manifest-twrp](https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp).
+This device tree was tested and is fully compatible with [Orangefox](https://wiki.orangefox.tech).
 
-1. Set up the build environment following the instructions [here](https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp/blob/twrp-12.1/README.md#getting-started)
+1. Set up the build environment following the instructions [here](https://wiki.orangefox.tech/en/dev/building)
 
-2. In the root folder of the fetched repo, clone the device tree specific to your model:
+2. In the root folder of the fetched repo, clone the device tree:
 
 ```bash
-git clone https://github.com/xfwdrev/android_device_samsung_ex2100_TWRP.git -b t2s device/samsung/t2s
+git clone https://github.com/xfwdrev/android_device_samsung_exynos2100_ofox.git -b android-12.1 device/samsung/exynos2100
 ```
 
 3. To build:
