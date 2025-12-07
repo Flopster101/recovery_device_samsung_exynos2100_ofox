@@ -20,7 +20,7 @@ CUSTOM_VENDOR := $(lastword $(subst /, ,$(firstword $(subst _, ,$(firstword $(MA
 
 # Inherit from common AOSP config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/$(CUSTOM_VENDOR)/config/common.mk)
@@ -40,6 +40,3 @@ DEVICE_PATH := device/$(PRODUCT_BRAND)/$(PRODUCT_PLATFORM)
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/$(PRODUCT_BRAND)/$(PRODUCT_PLATFORM)/$(PRODUCT_DEVICE)/device.mk)
-
-# # Inherit some common TWRP stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
