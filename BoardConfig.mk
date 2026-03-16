@@ -80,7 +80,6 @@ TARGET_USES_MKE2FS := true
 TW_DEVICE_VERSION := Chiclet_v2
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
-TW_FRAMERATE := 120
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
