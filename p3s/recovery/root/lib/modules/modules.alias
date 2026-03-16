@@ -1077,6 +1077,7 @@ alias usb:v0403pDA71d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
 alias usb:v0403pDA72d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
 alias usb:v0403pDA73d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
 alias usb:v0403pDA74d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
+alias usb:v23F2p0003d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
 alias usb:v1781p0C30d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
 alias usb:v1A28p6010d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
 alias usb:v0403p9E50d*dc*dsc*dp*ic*isc*ip*in* ftdi_sio
