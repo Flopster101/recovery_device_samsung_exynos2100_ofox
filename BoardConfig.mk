@@ -78,7 +78,17 @@ RECOVERY_SDCARD_ON_DATA := true
 TARGET_USES_MKE2FS := true
 
 # TWRP specific build flags
-TW_DEVICE_VERSION := Chiclet_v2
+# TW_DEVICE_VERSION := Chiclet_v2
+
+ifdef BUILD_TIMESTAMP
+  # Use the timestamp passed from the environment
+  _FINAL_BUILD_TIME := $(BUILD_TIMESTAMP)
+else
+  # Or calculate it if it isn't present
+  _FINAL_BUILD_TIME := $(shell date '+%y%m%d-%H%M')
+endif
+TW_DEVICE_VERSION := $(PRODUCT_DEVICE)-$(_FINAL_BUILD_TIME)
+
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_NO_REBOOT_BOOTLOADER := true
