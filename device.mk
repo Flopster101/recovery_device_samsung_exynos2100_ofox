@@ -37,3 +37,13 @@ TARGET_SCREEN_HEIGHT := 2400
 
 # Manual workaround for common tree
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(DEVICE_PATH)/recovery/root,recovery/root)
+
+# Common prebuilt kernel modules
+KERNEL_PREBUILT_PATH ?= $(DEVICE_PATH)-kernel
+KERNEL_MODULES_PATH := $(KERNEL_PREBUILT_PATH)/modules
+ifneq ($(wildcard $(KERNEL_MODULES_PATH)/lib/modules),)
+KERNEL_MODULES_PATH := $(KERNEL_MODULES_PATH)/lib/modules
+endif
+ifneq ($(wildcard $(KERNEL_MODULES_PATH)),)
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(KERNEL_MODULES_PATH),recovery/root/lib/modules)
+endif
