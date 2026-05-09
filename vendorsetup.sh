@@ -31,6 +31,8 @@ export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER="1"
 export FOX_USE_XZ_UTILS="1"
 export FOX_REMOVE_AAPT="1"
 export FOX_VARIANT="A12"
+export FOX_SETTINGS_ROOT_DIRECTORY="/cache"
+export FOX_MISCELLANEOUS_ROOT_DIRECTORY="/cache"
 
 _exynos2100_apply_recovery_patches() {
     local device_tree
