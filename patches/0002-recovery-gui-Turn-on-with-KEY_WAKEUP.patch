@@ -1,7 +1,7 @@
 From dca51f393f0bc0099c831740b859ff49144dae7f Mon Sep 17 00:00:00 2001
 From: Flopster101 <nahuelgomez329@gmail.com>
 Date: Fri, 8 May 2026 19:50:54 -0300
-Subject: [PATCH 2/2] recovery: gui: Turn on with KEY_WAKEUP
+Subject: [PATCH 2/4] recovery: gui: Turn on with KEY_WAKEUP
 
 Commonly used by touch panels to signal a DT2W gesture.
 
